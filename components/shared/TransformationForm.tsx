@@ -88,7 +88,6 @@ const TransformationForm = ({
     setIsSubmitting(true);
 
     if (data || image) {
-      console.log("\n", values, "\n");
       const transformationUrl = getCldImageUrl({
         width: image?.width,
         height: image?.height,
