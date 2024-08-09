@@ -1,3 +1,5 @@
+import ShineBorder from "@/components/magicui/shine-border";
+import WordRotate from "@/components/magicui/word-rotate";
 import { Collection } from "@/components/shared/Collection";
 import { navLinks } from "@/constants";
 import { getAllImages } from "@/lib/actions/image.actions";
@@ -8,12 +10,26 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || "";
   const images = await getAllImages({ page, searchQuery });
+  const words = [
+    "Creating",
+    "Building",
+    "Crafting",
+    "Evolving",
+    "Inspiring",
+    "Repeating",
+    "Designing",
+    "Imagining",
+    "Exploring",
+    "Developing",
+    "Innovating",
+  ];
 
   return (
     <>
-      <section className="home">
-        <h1 className="home-heading">
-          Unleash Your Creative Vision with envision
+      <ShineBorder borderWidth={5} className="home">
+        <h1 className="home-heading ">
+          Unleash Your Creativity,
+          <WordRotate words={words} />
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 5).map((link) => (
@@ -23,13 +39,19 @@ const Home = async ({ searchParams }: SearchParamProps) => {
               className="flex-center flex-col gap-2"
             >
               <li className="flex-center w-fit rounded-full bg-white p-4">
-                <Image src={link.icon} alt="image" width={24} height={24} />
+                <Image
+                  className="brightness-0"
+                  src={link.icon}
+                  alt="image"
+                  width={24}
+                  height={24}
+                />
               </li>
               <p className="p-14-medium text-center text-white">{link.label}</p>
             </Link>
           ))}
         </ul>
-      </section>
+      </ShineBorder>
 
       <section className="sm:mt-12">
         <Collection

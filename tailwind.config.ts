@@ -24,17 +24,17 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         purple: {
-          100: "#F4F7FE",
-          200: "#BCB6FF",
-          400: "#868CFF",
-          500: "#7857FF",
-          600: "#4318FF",
+          200: "#9A8FFF",
+          400: "#6C70E8",
+          500: "#5A4ECB",
+          600: "#3A2EAB",
+          100: "#D8DBF2",
         },
         dark: {
-          400: "#7986AC",
-          500: "#606C80",
-          600: "#2B3674",
-          700: "#384262",
+          400: "#5A648A",
+          500: "#4B546C",
+          600: "#FFFFFF",
+          700: "#2A3450",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -86,10 +86,28 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+        "shine-pulse": {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          to: {
+            "background-position": "0% 0%",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "shine-pulse": "border-beam calc(var(--duration)*1s) infinite linear",
       },
     },
   },

@@ -61,7 +61,7 @@ export const InsufficientCreditsModal = () => {
             No, Cancel
           </AlertDialogCancel>
           <AlertDialogAction
-            className="button w-full bg-purple-gradient  bg-cover"
+            className="button w-full bg-[#5752CA]  bg-cover"
             onClick={() => router.push("/credits")}
           >
             Yes, Proceed

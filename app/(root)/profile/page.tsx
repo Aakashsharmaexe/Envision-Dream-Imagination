@@ -6,6 +6,7 @@ import { Collection } from "@/components/shared/Collection";
 import Header from "@/components/shared/Header";
 import { getUserImages } from "@/lib/actions/image.actions";
 import { getUserById } from "@/lib/actions/user.actions";
+import ShineBorder from "@/components/magicui/shine-border";
 
 const Profile = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
@@ -20,9 +21,11 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
     <>
       <Header title="Profile" />
 
-      <section className="profile">
-        <div className="profile-balance">
-          <p className="p-14-medium md:p-16-medium">CREDITS AVAILABLE</p>
+      <section className="bg-black profile">
+        <ShineBorder className="profile-balance">
+          <p className="p-14-medium text-[#9591ef] md:p-16-medium">
+            CREDITS AVAILABLE
+          </p>
           <div className="mt-4 flex items-center gap-4">
             <Image
               src="/assets/icons/coins.svg"
@@ -31,12 +34,14 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
               height={50}
               className="size-9 md:size-12"
             />
-            <h2 className="h2-bold text-dark-600">{user.creditBalance}</h2>
+            <h2 className="h2-bold text-[#9591ef]">{user.creditBalance}</h2>
           </div>
-        </div>
+        </ShineBorder>
 
-        <div className="profile-image-manipulation">
-          <p className="p-14-medium md:p-16-medium">IMAGE MANIPULATION DONE</p>
+        <ShineBorder className="profile-image-manipulation">
+          <p className="p-14-medium text-[#9591ef] md:p-16-medium">
+            IMAGE MANIPULATION DONE
+          </p>
           <div className="mt-4 flex items-center gap-4">
             <Image
               src="/assets/icons/photo.svg"
@@ -45,9 +50,9 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
               height={50}
               className="size-9 md:size-12"
             />
-            <h2 className="h2-bold text-dark-600">{images?.data.length}</h2>
+            <h2 className="h2-bold text-[#9591ef]">{images?.data.length}</h2>
           </div>
-        </div>
+        </ShineBorder>
       </section>
 
       <section className="mt-8 md:mt-14">

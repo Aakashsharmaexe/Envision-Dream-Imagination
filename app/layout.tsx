@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
-
+import { dark } from "@clerk/themes";
 import "./globals.css";
 
 const IBMPlex = IBM_Plex_Sans({
@@ -24,7 +24,14 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        variables: { colorPrimary: "#000000" },
+        elements: {
+          socialButtonsBlockButton: "bg-[#272727]",
+          logoImage: "w-[150px] h-[50px]",
+          footerActionLink: "text-white",
+          formButtonPrimary: "text-white",
+        },
+        variables: { colorPrimary: "#000000", colorText: "white" },
+        baseTheme: dark,
       }}
     >
       <html lang="en">

@@ -18,6 +18,7 @@ import { formUrlQuery } from "@/lib/utils";
 import { Button } from "../ui/button";
 
 import { Search } from "./Search";
+import { BorderBeam } from "../magicui/border-beam";
 
 export const Collection = ({
   hasSearch = false,
@@ -56,13 +57,18 @@ export const Collection = ({
       {images.length > 0 ? (
         <ul className="collection-list">
           {images.map((image) => (
-            <Card image={image} key={image._id} />
+            <Card image={image} key={image.id} />
           ))}
         </ul>
       ) : (
-        <div className="collection-empty">
-          <p className="p-20-semibold">Empty List</p>
+        <div className="relative collection-empty rounded-xl">
+          <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b to-black from-gray-300/80 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+            EMPTY
+          </span>
+          <BorderBeam />
         </div>
+        // <div className="collection-empty">
+        // </div>
       )}
 
       {totalPages > 1 && (
@@ -81,7 +87,7 @@ export const Collection = ({
             </p>
 
             <Button
-              className="button w-32 bg-purple-gradient bg-cover text-white"
+              className="button w-32 bg-[#5752CA] bg-cover text-white"
               onClick={() => onPageChange("next")}
               disabled={Number(page) >= totalPages}
             >
