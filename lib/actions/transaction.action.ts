@@ -31,10 +31,10 @@ export async function checkoutCredits(transaction: CheckoutTransactionParams) {
       buyerId: transaction.buyerId,
     },
     mode: "payment",
-    // success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/profile`,
-    // cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/`,
-    success_url: "https://envision-dreamimagination.vercel.app/profile",
-    cancel_url: "https://envision-dreamimagination.vercel.app/",
+    success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/profile`,
+    cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/`,
+    // success_url: "https://envision-dreamimagination.vercel.app/profile",
+    // cancel_url: "https://envision-dreamimagination.vercel.app/",
   });
 
   redirect(session.url!);
