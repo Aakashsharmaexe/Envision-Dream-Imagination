@@ -62,9 +62,10 @@ const Checkout = ({
     <form action={onCheckout} method="POST">
       <section>
         <Button
+          variant="outline"
           type="submit"
           role="link"
-          className="w-full rounded-full bg-[#5752CA] bg-cover"
+          className="w-full text-white rounded-full bg-[#5752CA] bg-cover"
         >
           Buy Credit
         </Button>
